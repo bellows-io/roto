@@ -1,0 +1,11 @@
+{
+	"name"        : "bellows/roto",
+	"description" : "Basic web framework",
+	"license"     : "MIT",
+	"autoload": {
+		"psr-4": {"Roto\\":"src/"}
+	},
+	"require": {
+		"bellows/http": "dev-master"
+	}
+}
