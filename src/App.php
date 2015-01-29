@@ -5,8 +5,8 @@ namespace Roto;
 use \Http\StatusCode;
 use \Http\Response as HttpResponse;
 
-use \RotoHttp\Response\ViewResponse;
-use \RotoHttp\Response\ResponseInterface;
+use \Roto\Response\ViewResponse;
+use \Roto\Response\ResponseInterface;
 
 class App {
 

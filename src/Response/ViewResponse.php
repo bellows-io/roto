@@ -2,12 +2,12 @@
 
 namespace Roto\Response;
 
-use RotoHttp\View\View;
-use RotoHttp\View\Dispatcher;
-use RotoHttp\View\Layout;
+use Roto\View\View;
+use Roto\View\Dispatcher;
+use Roto\View\Layout;
 
-use \Http\Response;
-use \Http\StatusCode;
+use Http\Response;
+use Http\StatusCode;
 
 class ViewResponse implements ResponseInterface {
 
