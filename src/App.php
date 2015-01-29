@@ -12,13 +12,15 @@ class App {
 
 	protected $injector;
 	protected $verbose;
+	protected $router;
 
 	protected $controller = null;
 	protected $action = null;
 
-	public function __construct($injector, $verbose = false) {
+	public function __construct($injector, $router, $verbose = false) {
 		$this->injector = $injector;
-		$this->verbose = $verbose;
+		$this->verbose  = $verbose;
+		$this->router   = $router;
 	}
 
 	public function getController() {
@@ -64,10 +66,10 @@ class App {
 		return $httpResponse;
 	}
 
-	public function run($request, $router) {
+	public function run($request) {
 
 		$uriPath = parse_url($request->getUri())['path'];
-		list($this->controller, $this->action) = $router->route($uriPath, $pathName);
+		list($this->controller, $this->action) = $this->router->route($uriPath, $pathName);
 
 		$response = $this->getResponse($this->controller, $this->action);
 
