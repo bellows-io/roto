@@ -18,6 +18,7 @@ class JsonResponse implements ResponseInterface {
 	public function resolve(Response $response) {
 
 		$response->setCode(StatusCode::STATUS_200);
+		$response->setHeader('Content-type', 'application/json');
 		$response->lazySetBody(function() {
 
 			echo json_encode($this->data, $this->prettyPrint ? \JSON_PRETTY_PRINT : null);
