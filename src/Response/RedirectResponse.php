@@ -17,7 +17,7 @@ class RedirectResponse implements ResponseInterface {
 
 	public function resolve(Response $response) {
 
-		$response->setCode($isPermanent ? StatusCode::STATUS_301 : StatusCode::STATUS_304);
+		$response->setCode($this->isPermanent ? StatusCode::STATUS_301 : StatusCode::STATUS_304);
 		$response->setHeader("Location", $this->location);
 
 		$response->setBody(sprintf("Redirecting to `%s'", $this->location));
